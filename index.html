@@ -3,136 +3,150 @@
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
 
     <title>Hello, world!</title>
 
   </head>
-  <h1>Tobacco Trivia!</h1>
 
-  <div class = "container">
-    <div class="question-one">What is the leading cause of preventable cancer?</div>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-1">Tobacco Trivia!</h1>
+      <div class="timer">01:20</div>
+      <p>Test how well you know some facts related to the tobacco industry.</p>
+      <p> Once you start clicking the answers below, the timer will start counting down!</p>
+    </div>
+  </div>
+
+  <div class = "ques-container">
+
+    <div class="qone">In the U.S., tobacco use remains the single largest preventable cause of death and disease.</div>
+      <div class="input-group mb-2 mt-2">
+        <div class="input-group">
           <div class="input-group-text">
-            <input type="checkbox" aria-label="Checkbox for following text input">
-          <div id = "ans-one">answer option 1</div>
-            <input type="checkbox" aria-label="Checkbox for following text input">
-          <div id = "ans-two">answer option 2</div>
-            <input type="checkbox" aria-label="Checkbox for following text input">
-          <div id = "ans-three">answer option 3</div>
-            <input type="checkbox" aria-label="Checkbox for following text input">
-          <div id = "ans-four">answer option 4</div>
+          <input type ="checkbox" value = "one" name = "theCheckbox[1][]" aria-label="Checkbox for following text input">
+            <div id = "check">True</div>
+          <input type="checkbox" value = "two" name="theCheckbox[1][]" aria-label="Checkbox for following text input">
+            <div id = "check">False</div>
+          </div>
+        </div>
+      </div>
+
+    <div class="qtwo">Fill in the blank: There are ___ times more tobacco retailers in America than McDonald's.</div>
+      <div class="input-group mb-3 mt-2">
+        <div class="input-group">
+          <div class="input-group-text">
+          <input type="checkbox" value = "three" name="theCheckbox[2][]" aria-label="Checkbox for following text input">
+            <div id = "check">5</div>
+          <input type="checkbox" value = "four" name="theCheckbox[2][]" aria-label="Checkbox for following text input">
+            <div id = "check">35</div>
+          <input type="checkbox" value = "five" name="theCheckbox[2][]" aria-label="Checkbox for following text input">
+            <div id = "check">27</div>
+          <input type="checkbox" value = "six" name="theCheckbox[2][]" aria-label="Checkbox for following text input">
+            <div id = "check">10</div>
           </div>
         </div>
       </div>
     
-      <div class="question-one">What is the leading cause of preventable cancer?</div>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
+    <div class="qthree">The smoking rate is equal across all income, race, and education levels.</div>
+      <div class="input-group mb-3 mt-2">
+        <div class="input-group">
           <div class="input-group-text">
-            <input type="checkbox" aria-label="Checkbox for following text input">
-          <div id = "ans-one">answer option 1</div>
-            <input type="checkbox" aria-label="Checkbox for following text input">
-          <div id = "ans-two">answer option 2</div>
-            <input type="checkbox" aria-label="Checkbox for following text input">
-          <div id = "ans-three">answer option 3</div>
-            <input type="checkbox" aria-label="Checkbox for following text input">
-          <div id = "ans-four">answer option 4</div>
+          <input type="checkbox" value = "seven" name="theCheckbox[3][]" aria-label="Checkbox for following text input">
+            <div id = "check">True</div>
+          <input type="checkbox" value = "eight" name="theCheckbox[3][]" aria-label="Checkbox for following text input">
+            <div id = "check">False</div>
           </div>
         </div>
       </div>
 
-      <div class="question-one">True or False?</div>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
+    <div class="qfour">Almost no one starts smoking after age 25.</div>
+      <div class="input-group mb-3 mt-2">
+        <div class="input-group">
           <div class="input-group-text">
-            <input type="checkbox" aria-label="Checkbox for following text input">
-          <div id = "ans-one">answer option 1</div>
-            <input type="checkbox" aria-label="Checkbox for following text input">
-          <div id = "ans-two">answer option 2</div>
+            <input type="checkbox" value = "nine" name="theCheckbox[4][]" aria-label="Checkbox for following text input">
+              <div id = "check">True</div>
+            <input type="checkbox" value = "ten" name="theCheckbox[4][]" aria-label="Checkbox for following text input">
+              <div id = "check">False</div>
           </div>
         </div>
       </div>
 
-      <div class="question-one">What is the leading cause of preventable cancer?</div>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
+    <div class="qfive">The tobacco industry spends $1 million per hour on advertising and marketing.</div>
+      <div class="input-group mb-3 mt-2">
+        <div class="input-group">
           <div class="input-group-text">
-            <input type="checkbox" aria-label="Checkbox for following text input">
-          <div id = "ans-one">answer option 1</div>
-            <input type="checkbox" aria-label="Checkbox for following text input">
-          <div id = "ans-two">answer option 2</div>
-            <input type="checkbox" aria-label="Checkbox for following text input">
-          <div id = "ans-three">answer option 3</div>
-            <input type="checkbox" aria-label="Checkbox for following text input">
-          <div id = "ans-four">answer option 4</div>
+          <input type="checkbox" value = "eleven" name="theCheckbox[5][]" aria-label="Checkbox for following text input">
+            <div id = "check">True</div>
+          <input type="checkbox" value = "twelve" name="theCheckbox[5][]" aria-label="Checkbox for following text input">
+            <div id = "check">False</div>
           </div>
         </div>
       </div>
-
-      <div class="question-one">True or False?</div>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <div class="input-group-text">
-            <input type="checkbox" aria-label="Checkbox for following text input">
-          <div id = "ans-one">answer option 1</div>
-            <input type="checkbox" aria-label="Checkbox for following text input">
-          <div id = "ans-two">answer option 2</div>
-          </div>
-        </div>
-      </div>
-
       
-      <div class="question-one">What is the leading cause of preventable cancer?</div>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
+    <div class="qsix">What state was the first to raise the minimum legal age for tobacco to 21?</div>
+      <div class="input-group mb-3 mt-2">
+        <div class="input-group">
           <div class="input-group-text">
-            <input type="checkbox" aria-label="Checkbox for following text input">
-          <div id = "ans-one">answer option 1</div>
-            <input type="checkbox" aria-label="Checkbox for following text input">
-          <div id = "ans-two">answer option 2</div>
-            <input type="checkbox" aria-label="Checkbox for following text input">
-          <div id = "ans-three">answer option 3</div>
-            <input type="checkbox" aria-label="Checkbox for following text input">
-          <div id = "ans-four">answer option 4</div>
+            <input type="checkbox" value = "thirteen" name="theCheckbox[6][]" aria-label="Checkbox for following text input">
+          <div id = "check">Oregon</div>
+            <input type="checkbox" value = "fourteen" name="theCheckbox[6][]" aria-label="Checkbox for following text input">
+          <div id = "check">Hawaii</div>
+            <input type="checkbox" value = "fifteen" name="theCheckbox[6][]" aria-label="Checkbox for following text input">
+          <div id = "check">Alabama</div>
+            <input type="checkbox" value = "sixteen" name="theCheckbox[6][]" aria-label="Checkbox for following text input">
+          <div id = "check">New Jersey</div>
           </div>
         </div>
       </div>
 
-      <div class="question-one">True or False?</div>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
+    <div class="qseven">What year did E-cigarettes become available in the U.S.?</div>
+      <div class="input-group mb-3 mt-2">
+        <div class="input-group">
           <div class="input-group-text">
-            <input type="checkbox" aria-label="Checkbox for following text input">
-          <div id = "ans-one">answer option 1</div>
-            <input type="checkbox" aria-label="Checkbox for following text input">
-          <div id = "ans-two">answer option 2</div>
+          <input type="checkbox" value = "seventeen" name="theCheckbox[7][]" aria-label="Checkbox for following text input">
+            <div id = "check">2011</div>
+          <input type="checkbox" value = "eighteen" name="theCheckbox[7][]" aria-label="Checkbox for following text input">
+            <div id = "check">2007</div>
+          <input type="checkbox" value = "nineteen" name="theCheckbox[7][]" aria-label="Checkbox for following text input">
+            <div id = "check">2013</div>
+          <input type="checkbox" value = "twenty" name="theCheckbox[7][]" aria-label="Checkbox for following text input">
+            <div id = "check">2005</div>
           </div>
         </div>
       </div>
 
-      <div class="question-one">What is the leading cause of preventable cancer?</div>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
+    <div class="qeight">In 2017, New York City raised the minimum price for a pack of cigarettes to ____ dollars.</div>
+      <div class="input-group mb-3 mt-2">
+        <div class="input-group">
           <div class="input-group-text">
-            <input type="checkbox" aria-label="Checkbox for following text input">
-          <div id = "ans-one">answer option 1</div>
-            <input type="checkbox" aria-label="Checkbox for following text input">
-          <div id = "ans-two">answer option 2</div>
-            <input type="checkbox" aria-label="Checkbox for following text input">
-          <div id = "ans-three">answer option 3</div>
-            <input type="checkbox" aria-label="Checkbox for following text input">
-          <div id = "ans-four">answer option 4</div>
+          <input type="checkbox" value = "twentyone" name="theCheckbox[8][]" aria-label="Checkbox for following text input">
+            <div id = "check">15</div>
+          <input type="checkbox" value = "twentytwo" name="theCheckbox[8][]" aria-label="Checkbox for following text input">
+            <div id = "check">10</div>
+          <input type="checkbox" value = "twentythree" name="theCheckbox[8][]" aria-label="Checkbox for following text input">
+            <div id = "check">13</div>
+          <input type="checkbox" value = "twentyfour" name="theCheckbox[8][]" aria-label="Checkbox for following text input">
+            <div id = "check">8</div>
           </div>
         </div>
       </div>
-
-
   </div>
+
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+      
+    <script src="assets/javascript/app.js"></script>
+
   <body>
 
 

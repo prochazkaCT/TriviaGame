@@ -1,0 +1,71 @@
+body {
+  background: url("../images/background.jpg");
+  font-family: 'Cinzel', serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container, .ques-container {
+  background-color: orangered;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  opacity: 0.90;
+  outline-style: double;
+}
+
+.ques-container {
+  margin-top: 450px;
+  margin-left: 15%;
+  margin-right: 15%;
+} 
+
+.input-group-text {
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: bold;
+}
+
+input {
+  margin-right: 10px;
+  margin-left: 20px;
+}
+
+.qone, .qtwo, .qthree, .qfour, .qfive, .qsix, .qseven, .qeight {
+  text-align: center;
+  font-weight: bold;
+  font-size: 2ch;
+}
+
+.timer {
+  width: 20%;
+  background-color: orangered;
+  opacity: 0.85;
+  margin: auto;
+  font-size: 100px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.display-1 {
+  font-size: 100px;
+  text-align: center;
+  font-weight: bold;
+  height: 10%;
+}
+
+.jumbotron {
+  opacity: 0.90;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+}
+
+p {
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+}
