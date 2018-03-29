@@ -3,6 +3,7 @@
 var number = 120;
 var intervalId;
 var userAnswers = [];
+var timerRunning = false;
 
 //Writing the functions: 
 
@@ -11,6 +12,7 @@ function startTimer () {
   clearInterval(intervalId);
   console.log(intervalId);
   intervalId = setInterval(decrement, 1000);
+  timerRunning = true;
   })
 }
 
@@ -20,18 +22,19 @@ function decrement () {
   $(".timer").text(converted);
   if (number === 0) {
     stop();
-    alert("Time Up!");
+    alert("So sorry - your time is up! Let's see how you did.");
     reset();
   }
 }
 
 function stop () {
   clearInterval(intervalId);
+  timerRunning = false;
 }
 
 function reset() {
   number = 120;
-  $(".timer").text("01:20");
+  $(".timer").text("02:00");
 }
 
 function timeConverter(t) {
@@ -53,6 +56,9 @@ function timeConverter(t) {
   return minutes + ":" + seconds;
 }
 
+var corrA = ["one", "five", "eight", "nine", "eleven", "fourteen", "eighteen", "twentythree"];
+var userA = [];
+
 //Playing the game: 
 $("input:checkbox").on("click", function () {
   var $box = $(this);
@@ -63,22 +69,42 @@ $("input:checkbox").on("click", function () {
   } else {
     $box.prop("checked", false);
   }
-    userAnswers = [];
-    $('input:checked').each(function() {
-    userAnswers.push($(this).val());
-    });
-    console.log(userAnswers);
-    var correctAnswers = ["one", "five", "eight", "nine", "eleven", "fourteen", "eighteen", "twentythree"];
-      if (userAnswers === correctAnswers) {
-        console.log("you win")
+  var userA = [];
+  $('input:checked').each(function() {
+  userA.push($(this).val());
+  });
+  userA.toString();
+  console.log(userA);
+
+  var matches = [];
+  function Done () {
+    if (corrA.length === userA.length) {
+    alert("Let's see how you did!");
+    stop();
+    timerRunning = false;
+      function getMatch(a, b) {
+        for ( var i = 0; i < a.length; i++ ) {
+          for ( var e = 0; e < b.length; e++ ) {
+            if ( a[i] === b[e] ) matches.push( a[i] );
+          }
+        }
       }
+
+      getMatch(userA, corrA); 
+      console.log("the matches are: " + matches);
+      console.log("the length of correct answers: " + corrA.length);
+      console.log("the length of matches: " + matches.length);
+      var wrongA = (corrA.length - matches.length);      
+      console.log("You got: " + wrongA + " wrong.")
+    }
+  }
+Done();
+  
+
 });
 
 
-
-
-
-
+stop();
 reset();
 startTimer();
 timeConverter();
