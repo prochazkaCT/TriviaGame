@@ -2,8 +2,6 @@
 
 var number = 120;
 var intervalId;
-var userAnswers = [];
-var timerRunning = false;
 
 //Writing the functions: 
 
@@ -12,7 +10,6 @@ function startTimer () {
   clearInterval(intervalId);
   console.log(intervalId);
   intervalId = setInterval(decrement, 1000);
-  timerRunning = true;
   })
 }
 
@@ -21,15 +18,21 @@ function decrement () {
   var converted = timeConverter(number);
   $(".timer").text(converted);
   if (number === 0) {
-    stop();
     alert("So sorry - your time is up! Let's see how you did.");
-    reset();
+    hideTimer();
+    stop();
   }
 }
 
 function stop () {
   clearInterval(intervalId);
-  timerRunning = false;
+}
+
+function hideStuff () {
+  if (number === 0);
+    $(".timer").hide();
+    $("p").hide();
+    $(".ques-container").hide();
 }
 
 function reset() {
@@ -80,8 +83,7 @@ $("input:checkbox").on("click", function () {
   function Done () {
     if (corrA.length === userA.length) {
     alert("Let's see how you did!");
-    stop();
-    timerRunning = false;
+    hideStuff();
       function getMatch(a, b) {
         for ( var i = 0; i < a.length; i++ ) {
           for ( var e = 0; e < b.length; e++ ) {
@@ -95,12 +97,26 @@ $("input:checkbox").on("click", function () {
       console.log("the length of correct answers: " + corrA.length);
       console.log("the length of matches: " + matches.length);
       var wrongA = (corrA.length - matches.length);      
-      console.log("You got: " + wrongA + " wrong.")
+      console.log("You got: " + wrongA + " wrong.");
+      
+      if (matches.length <= 5) {
+        $("#message").html("You should visit countertobacco.org to brush up on your tobacco facts and then try again.");
+      }
+
+        if (matches.length > 5) {
+          $("#message").html("Not to bad, you know your facts!");
+        }
+
+          if (matches.length === 0) {
+            $("#message").html("You are a tobacco fact master!");
+          }
+
+      $("#right").html("You answered " + matches.length + " right!");
+      $("#wrong").html("You answered " + wrongA + " wrong.");
+
     }
   }
 Done();
-  
-
 });
 
 
