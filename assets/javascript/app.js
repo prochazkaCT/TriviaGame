@@ -2,14 +2,17 @@
 
 var number = 120;
 var intervalId;
+var timerRunning = false;
+$(".results").hide();
 
 //Writing the functions: 
 
 function startTimer () {
-  $(".input-group").on("click", function() {
-  clearInterval(intervalId);
-  console.log(intervalId);
-  intervalId = setInterval(decrement, 1000);
+  $(".input-group").on("click", function() { 
+    if (!timerRunning) {
+    intervalId = setInterval(decrement, 1000);
+    timerRunning = true;
+    }
   })
 }
 
@@ -18,21 +21,24 @@ function decrement () {
   var converted = timeConverter(number);
   $(".timer").text(converted);
   if (number === 0) {
-    alert("So sorry - your time is up! Let's see how you did.");
-    hideTimer();
     stop();
-  }
+    hideStuff();
+    show();  }
 }
 
 function stop () {
   clearInterval(intervalId);
+  timerRunning = false;
 }
 
 function hideStuff () {
-  if (number === 0);
     $(".timer").hide();
     $("p").hide();
     $(".ques-container").hide();
+}
+
+function show () {
+  $(".results").show();
 }
 
 function reset() {
@@ -81,8 +87,8 @@ $("input:checkbox").on("click", function () {
 
   var matches = [];
   function Done () {
-    if (corrA.length === userA.length) {
-    alert("Let's see how you did!");
+    if (corrA.length === userA.length || number === 0) {
+    show();
     hideStuff();
       function getMatch(a, b) {
         for ( var i = 0; i < a.length; i++ ) {
@@ -98,29 +104,27 @@ $("input:checkbox").on("click", function () {
       console.log("the length of matches: " + matches.length);
       var wrongA = (corrA.length - matches.length);      
       console.log("You got: " + wrongA + " wrong.");
-      
+
       if (matches.length <= 5) {
         $("#message").html("You should visit countertobacco.org to brush up on your tobacco facts and then try again.");
       }
 
         if (matches.length > 5) {
-          $("#message").html("Not to bad, you know your facts!");
+          $("#message").html("Not too shabby, you know your facts!");
         }
 
           if (matches.length === 0) {
             $("#message").html("You are a tobacco fact master!");
           }
-
-      $("#right").html("You answered " + matches.length + " right!");
+      $("#right").html("You answered " + matches.length + " right.");
       $("#wrong").html("You answered " + wrongA + " wrong.");
 
     }
   }
 Done();
 });
-
-
-stop();
+show();
 reset();
 startTimer();
 timeConverter();
+stop();

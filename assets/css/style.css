@@ -26,7 +26,7 @@ body {
 .input-group-text {
   margin-left: auto;
   margin-right: auto;
-  font-weight: bold;
+  font-weight: bolder;
 }
 
 input {
@@ -36,7 +36,7 @@ input {
 
 .qone, .qtwo, .qthree, .qfour, .qfive, .qsix, .qseven, .qeight {
   text-align: center;
-  font-weight: bold;
+  font-weight: bolder;
   font-size: 2ch;
 }
 
@@ -48,14 +48,14 @@ input {
   margin: auto;
   font-size: 60px;
   text-align: center;
-  font-weight: bold;
+  font-weight: bolder;
 }
 
 .display-1 {
   margin-bottom: 0px;
   font-size: 80px;
   text-align: center;
-  font-weight: bold;
+  font-weight: bolder;
   height: 5%;
 }
 
@@ -68,11 +68,23 @@ input {
 p {
   font-size: 1.5ch;
   text-align: center;
-  font-weight: bolder;
-  padding: 0px;
   margin-bottom: 5px; 
   background-color:ghostwhite;
-  width: 80%;
+  width: 75%;
   margin-left: auto;
   margin-right: auto;
+}
+
+.results {
+  width: 50%;
+  background-color: orangered;
+  opacity: 0.85;
+  margin: auto;
+  margin-top: 20px;
+  font-size: 40px;
+  text-align: center;
+  font-weight: bolder;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  outline-style: double;
 }
