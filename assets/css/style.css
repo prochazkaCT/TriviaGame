@@ -76,15 +76,7 @@ p {
 }
 
 .results {
-  width: 50%;
-  background-color: orangered;
-  opacity: 0.85;
-  margin: auto;
-  margin-top: 20px;
   font-size: 40px;
   text-align: center;
   font-weight: bolder;
-  padding-bottom: 10px;
-  padding-top: 10px;
-  outline-style: double;
 }

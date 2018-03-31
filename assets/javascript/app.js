@@ -3,8 +3,6 @@
 var number = 120;
 var intervalId;
 var timerRunning = false;
-$(".results").hide();
-
 //Writing the functions: 
 
 function startTimer () {
@@ -23,7 +21,7 @@ function decrement () {
   if (number === 0) {
     stop();
     hideStuff();
-    show();  }
+  }
 }
 
 function stop () {
@@ -35,10 +33,6 @@ function hideStuff () {
     $(".timer").hide();
     $("p").hide();
     $(".ques-container").hide();
-}
-
-function show () {
-  $(".results").show();
 }
 
 function reset() {
@@ -87,8 +81,7 @@ $("input:checkbox").on("click", function () {
 
   var matches = [];
   function Done () {
-    if (corrA.length === userA.length || number === 0) {
-    show();
+    if (corrA.length === userA.length || number === "0") {
     hideStuff();
       function getMatch(a, b) {
         for ( var i = 0; i < a.length; i++ ) {
@@ -97,7 +90,6 @@ $("input:checkbox").on("click", function () {
           }
         }
       }
-
       getMatch(userA, corrA); 
       console.log("the matches are: " + matches);
       console.log("the length of correct answers: " + corrA.length);
@@ -116,14 +108,13 @@ $("input:checkbox").on("click", function () {
           if (matches.length === 0) {
             $("#message").html("You are a tobacco fact master!");
           }
-      $("#right").html("You answered " + matches.length + " right.");
-      $("#wrong").html("You answered " + wrongA + " wrong.");
-
+      $("#right").html("You answered:    " + matches.length + " right.");
+      $("#wrong").html("You answered:    " + wrongA + " wrong.");
     }
   }
 Done();
 });
-show();
+
 reset();
 startTimer();
 timeConverter();
