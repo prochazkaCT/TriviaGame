@@ -3,6 +3,9 @@
 var number = 120;
 var intervalId;
 var timerRunning = false;
+var gameOver = false;
+$(".results-container").hide();
+
 //Writing the functions: 
 
 function startTimer () {
@@ -21,6 +24,7 @@ function decrement () {
   if (number === 0) {
     stop();
     hideStuff();
+    gameOver = true;
   }
 }
 
@@ -33,6 +37,7 @@ function hideStuff () {
     $(".timer").hide();
     $("p").hide();
     $(".ques-container").hide();
+    $(".results-container").show();
 }
 
 function reset() {
@@ -81,7 +86,7 @@ $("input:checkbox").on("click", function () {
 
   var matches = [];
   function Done () {
-    if (corrA.length === userA.length || number === "0") {
+    if (corrA.length === userA.length || gameOver === true) {
     hideStuff();
       function getMatch(a, b) {
         for ( var i = 0; i < a.length; i++ ) {
@@ -115,6 +120,7 @@ $("input:checkbox").on("click", function () {
 Done();
 });
 
+decrement();
 reset();
 startTimer();
 timeConverter();
