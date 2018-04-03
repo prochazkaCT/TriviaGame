@@ -106,11 +106,11 @@ $("input:checkbox").on("click", function () {
         $("#message").html("You should visit countertobacco.org to brush up on your tobacco facts and then try again.");
       }
 
-        if (matches.length > 5) {
+        if (wrongA < 5 && wrongA > 0) {
           $("#message").html("Not too shabby, you know your facts!");
         }
 
-          if (matches.length === 0) {
+          if (wrongA === 0) {
             $("#message").html("You are a tobacco fact master!");
           }
       $("#right").html("You answered:    " + matches.length + " right.");
