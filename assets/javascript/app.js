@@ -82,7 +82,7 @@ $("input:checkbox").on("click", function () {
   userA.push($(this).val());
   });
   userA.toString();
-  console.log(userA);
+//   console.log(userA);
 
   var matches = [];
   function Done () {
@@ -96,11 +96,11 @@ $("input:checkbox").on("click", function () {
         }
       }
       getMatch(userA, corrA); 
-      console.log("the matches are: " + matches);
-      console.log("the length of correct answers: " + corrA.length);
-      console.log("the length of matches: " + matches.length);
+//       console.log("the matches are: " + matches);
+//       console.log("the length of correct answers: " + corrA.length);
+//       console.log("the length of matches: " + matches.length);
       var wrongA = (corrA.length - matches.length);      
-      console.log("You got: " + wrongA + " wrong.");
+//       console.log("You got: " + wrongA + " wrong.");
 
       if (matches.length <= 5) {
         $("#message").html("You should visit countertobacco.org to brush up on your tobacco facts and then try again.");
@@ -125,3 +125,4 @@ reset();
 startTimer();
 timeConverter();
 stop();
+//Note: I can't (without rewriting/redesigning) get the results to pop up when the timer runs out. I think it is because my done function is too nested. I would appreciate feedback. Thanks!
