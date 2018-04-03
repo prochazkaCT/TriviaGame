@@ -3,7 +3,8 @@
 var number = 120;
 var intervalId;
 var timerRunning = false;
-var gameOver = false;
+var corrA = ["one", "five", "eight", "nine", "eleven", "fourteen", "eighteen", "twentythree"];
+var userA = [];
 $(".results-container").hide();
 
 //Writing the functions: 
@@ -24,7 +25,9 @@ function decrement () {
   if (number === 0) {
     stop();
     hideStuff();
-    gameOver = true;
+    $("#message").html("Your time is up!! You should visit countertobacco.org to brush up on your tobacco facts and then try again.");
+    var unanswered = (corrA.length - userA.length);
+    $("#wrong").html("You missed " + unanswered + " questions.");
   }
 }
 
@@ -64,9 +67,6 @@ function timeConverter(t) {
   return minutes + ":" + seconds;
 }
 
-var corrA = ["one", "five", "eight", "nine", "eleven", "fourteen", "eighteen", "twentythree"];
-var userA = [];
-
 //Playing the game: 
 $("input:checkbox").on("click", function () {
   var $box = $(this);
@@ -83,11 +83,11 @@ $("input:checkbox").on("click", function () {
   });
   userA.toString();
 //   console.log(userA);
-
-  var matches = [];
   function Done () {
-    if (corrA.length === userA.length || gameOver === true) {
+    if (corrA.length === userA.length) {
     hideStuff();
+    var matches = [];
+
       function getMatch(a, b) {
         for ( var i = 0; i < a.length; i++ ) {
           for ( var e = 0; e < b.length; e++ ) {
@@ -96,10 +96,10 @@ $("input:checkbox").on("click", function () {
         }
       }
       getMatch(userA, corrA); 
+      var wrongA = (corrA.length - matches.length);      
 //       console.log("the matches are: " + matches);
 //       console.log("the length of correct answers: " + corrA.length);
 //       console.log("the length of matches: " + matches.length);
-      var wrongA = (corrA.length - matches.length);      
 //       console.log("You got: " + wrongA + " wrong.");
 
       if (matches.length <= 5) {
@@ -113,8 +113,8 @@ $("input:checkbox").on("click", function () {
           if (wrongA === 0) {
             $("#message").html("You are a tobacco fact master!");
           }
-      $("#right").html("You answered:    " + matches.length + " right.");
-      $("#wrong").html("You answered:    " + wrongA + " wrong.");
+      $("#right").html("You answered    " + matches.length + " right.");
+      $("#wrong").html("You answered    " + wrongA + " wrong.");
     }
   }
 Done();
@@ -125,4 +125,3 @@ reset();
 startTimer();
 timeConverter();
 stop();
-//Note: I can't (without rewriting/redesigning) get the results to pop up when the timer runs out. I think it is because my done function is too nested. I would appreciate feedback. Thanks!
